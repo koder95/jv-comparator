@@ -9,7 +9,9 @@ public class EmployeeService {
 
     public Set<Employee> getEmployeeByOrder(List<Employee> employees) {
         SortedSet<Employee> employeeSortedSet = new TreeSet<>(AGE_NAME_COMPARATOR);
-        employeeSortedSet.addAll(employees);
+        if (employees != null) {
+            employeeSortedSet.addAll(employees);
+        }
         return employeeSortedSet;
     }
 }
